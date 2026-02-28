@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="WebHouse Inc. - Technologies we use. We harness a diverse range of programming languages and platforms to create custom solutions that align with your enterprise needs."/>
+    <meta name="keywords" content="technologies, programming languages, .NET, Java, Node.js, Python, PHP, Azure, GCP, cloud platforms"/>
+    <meta name="author" content="WebHouse Inc."/>
+    <meta property="og:title" content="Technologies - WebHouse Inc."/>
+    <meta property="og:description" content="Revolutionary technologies for a changing world. Languages and platforms we use to build your digital future."/>
+    <meta property="og:type" content="website"/>
+    <title>Technologies - WebHouse Inc.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/styles.css"/>
+
+
+    <style>
+        .tech-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 1px solid #f1f1f1;
+    transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    border-color: rgba(185,6,6,0.2);
+}
+
+.tech-card h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.tech-card p {
+    font-size: 0.9rem;
+    color: #6b7280;
+    line-height: 1.6;
+}
+    </style>
+</head>
+<body class="bg-background-light text-[#1c1917] selection:bg-primary selection:text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<header class="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-gray-100 transition-all duration-300 group/header">
+<div class="mx-auto flex h-20 max-w-[1400px] items-center justify-between px-6 lg:px-10">
+<a href="index.html" class="flex items-center gap-3 group cursor-pointer">
+<img src="assets/images/logo.png" alt="WebHouse Inc." class="h-7 w-auto object-contain"/>
+</a>
+<nav class="hidden md:flex items-center gap-2 rounded-full p-1.5 bg-gray-100/50 border border-gray-200/50 backdrop-blur-md">
+    <a class="px-5 py-2 text-sm font-medium rounded-full text-gray-600 hover:text-black hover:bg-white hover:shadow-sm transition-all" href="v1_index.html">Home</a>
+    <a class="px-5 py-2 text-sm font-medium rounded-full text-gray-600 hover:text-black hover:bg-white hover:shadow-sm transition-all" href="about.html">Who We Are?</a>
+    <a class="px-5 py-2 text-sm font-medium rounded-full text-gray-600 hover:text-black hover:bg-white hover:shadow-sm transition-all" href="how-we-work.html">How We Work?</a>
+    <div class="relative" data-mega-menu-trigger="services">
+    <a class="px-5 py-2 text-sm font-medium rounded-full text-gray-600 hover:text-black hover:bg-white hover:shadow-sm transition-all inline-block" href="services.html">What We Do?</a>
+    </div>
+<div class="relative" data-mega-menu-trigger="technologies">
+<a class="px-5 py-2 text-sm font-medium rounded-full text-gray-600 hover:text-black hover:bg-white hover:shadow-sm transition-all inline-block" href="technologies.html">Technologies</a>
+</div>
+<a class="px-5 py-2 text-sm font-medium rounded-full text-gray-600 hover:text-black hover:bg-white hover:shadow-sm transition-all" href="contact_us.html">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex h-10 items-center justify-center rounded-full bg-transparent px-5 text-sm font-bold text-black hover:text-primary transition-all">Log in</button>
+<a href="contact_us.html" class="hidden sm:flex h-10 items-center justify-center rounded-full bg-gradient-to-r from-[#b90606] to-[#c80505] px-5 text-sm font-bold text-white shadow-glow hover:opacity-90 transition-all transform hover:scale-105">Get Started</a>
+<button class="md:hidden p-2 text-gray-600 hover:text-primary transition-colors" aria-label="Toggle mobile menu" data-mobile-menu-toggle><span class="material-symbols-outlined">menu</span></button>
+</div>
+</div>
+<!-- Services Mega Menu -->
+<div data-mega-menu-panel="services" class="absolute left-0 right-0 top-full pt-0 bg-white border-b border-gray-100 shadow-xl invisible opacity-0 transition-all duration-200 z-40">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-4 pr-8 border-r border-gray-100"><h3 class="font-display text-xl font-bold text-[#1c1917] mb-3">Built to Win</h3><p class="text-sm text-gray-500 leading-relaxed mb-6">Transforming business with our future-ready tech solutions. Get custom products for accelerated digital transformation across industries globally.</p><a href="contact_us.html" class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all">Get In Touch <span class="material-symbols-outlined text-lg">arrow_forward</span></a></div>
+<div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-6">
+<div><a href="services/product-platform-engineering.html" class="block font-bold text-[#1c1917] hover:text-primary mb-3">Product &amp; Platform Engineering</a><p class="text-gray-500 text-xs mb-1">&gt; iOS App Engineering</p><p class="text-gray-500 text-xs mb-1">&gt; Android App Engineering</p><p class="text-gray-500 text-xs">&gt; Cross-Platform Solutions</p></div>
+<div><a href="services/custom-software-enterprise-systems.html" class="block font-bold text-[#1c1917] hover:text-primary mb-3">Custom Software &amp; Enterprise Systems</a><p class="text-gray-500 text-xs mb-1">&gt; ERP Systems</p><p class="text-gray-500 text-xs mb-1">&gt; CRM Platforms</p><p class="text-gray-500 text-xs">&gt; CMS Solutions</p></div>
+<div><a href="services/web-ecommerce-engineering.html" class="block font-bold text-[#1c1917] hover:text-primary mb-3">Web &amp; E-Commerce Engineering</a><p class="text-gray-500 text-xs mb-1">&gt; E-Commerce Platform Development</p><p class="text-gray-500 text-xs">&gt; Enterprise Web Portals &amp; Dashboards</p></div>
+<div><a href="services/ai-data-intelligent-systems.html" class="block font-bold text-[#1c1917] hover:text-primary mb-3">AI, Data &amp; Intelligent Systems</a><p class="text-gray-500 text-xs mb-1">&gt; Generative AI Solutions</p><p class="text-gray-500 text-xs mb-1">&gt; Natural Language Processing (NLP)</p><p class="text-gray-500 text-xs">&gt; AI Agents &amp; Workflow Automation</p></div>
+<div><a href="services/cloud-devops-infrastructure.html" class="block font-bold text-[#1c1917] hover:text-primary mb-3">Cloud, DevOps &amp; Infrastructure</a><p class="text-gray-500 text-xs mb-1">&gt; Cloud-Native Development</p><p class="text-gray-500 text-xs mb-1">&gt; Cloud Migration</p><p class="text-gray-500 text-xs">&gt; Infrastructure Management</p></div>
+<div><a href="services/dedicated-teams-staff-augmentation.html" class="block font-bold text-[#1c1917] hover:text-primary mb-3">Dedicated Teams &amp; Staff Augmentation</a><p class="text-gray-500 text-xs mb-1">&gt; Dedicated Engineers</p><p class="text-gray-500 text-xs mb-1">&gt; Dedicated Designers</p><p class="text-gray-500 text-xs">&gt; Dedicated Marketeers</p></div>
+<div><a href="services/growth-marketing-performance.html" class="block font-bold text-[#1c1917] hover:text-primary mb-3">Growth, Marketing &amp; Performance</a><p class="text-gray-500 text-xs mb-1">&gt; Social Media Growth</p><p class="text-gray-500 text-xs mb-1">&gt; Search Engine Marketing (SEM)</p><p class="text-gray-500 text-xs">&gt; Search Engine Optimization (SEO)</p></div>
+</div>
+</div>
+</div>
+</div>
+<div data-mega-menu-panel="technologies" class="absolute left-0 right-0 top-full pt-0 bg-white border-b border-gray-100 shadow-xl invisible opacity-0 transition-all duration-200 z-40">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+<!-- LEFT SIDE -->
+<div class="lg:col-span-4 pr-8 border-r border-gray-100">
+<h3 class="font-display text-xl font-bold text-[#1c1917] mb-3">Technology Stack</h3>
+<p class="text-sm text-gray-500 leading-relaxed mb-6">
+Our engineering capabilities align directly with each service vertical — from mobile and AI to enterprise and cloud-native infrastructure.
+</p>
+<a href="technologies.html" class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all">
+View All Technologies 
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</a>
+</div>
+
+<!-- RIGHT SIDE -->
+<div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-6">
+
+<!-- Product & Platform Engineering -->
+<div>
+<span class="block font-bold text-[#1c1917] mb-3">Product & Platform Engineering</span>
+<p class="text-gray-500 text-xs mb-1">> Swift</p>
+<p class="text-gray-500 text-xs mb-1">> Kotlin</p>
+<p class="text-gray-500 text-xs mb-1">> Flutter</p>
+<p class="text-gray-500 text-xs">> React Native</p>
+</div>
+
+<!-- Custom Software & Enterprise Systems -->
+<div>
+<span class="block font-bold text-[#1c1917] mb-3">Enterprise Systems</span>
+<p class="text-gray-500 text-xs mb-1">> .NET / C#</p>
+<p class="text-gray-500 text-xs mb-1">> Java</p>
+<p class="text-gray-500 text-xs mb-1">> Node.js</p>
+<p class="text-gray-500 text-xs">> SAP / Oracle</p>
+</div>
+
+<!-- Web & E-Commerce Engineering -->
+<div>
+<span class="block font-bold text-[#1c1917] mb-3">Web & E-Commerce</span>
+<p class="text-gray-500 text-xs mb-1">> React / Next.js</p>
+<p class="text-gray-500 text-xs mb-1">> PHP</p>
+<p class="text-gray-500 text-xs mb-1">> Shopify</p>
+<p class="text-gray-500 text-xs">> Magento</p>
+</div>
+
+<!-- AI, Data & Intelligent Systems -->
+<div>
+<span class="block font-bold text-[#1c1917] mb-3">AI & Intelligent Systems</span>
+<p class="text-gray-500 text-xs mb-1">> Python</p>
+<p class="text-gray-500 text-xs mb-1">> TensorFlow</p>
+<p class="text-gray-500 text-xs mb-1">> PyTorch</p>
+<p class="text-gray-500 text-xs">> LLM Integrations</p>
+</div>
+
+<!-- Cloud, DevOps & Infrastructure -->
+<div>
+<span class="block font-bold text-[#1c1917] mb-3">Cloud & DevOps</span>
+<p class="text-gray-500 text-xs mb-1">> AWS</p>
+<p class="text-gray-500 text-xs mb-1">> Azure</p>
+<p class="text-gray-500 text-xs mb-1">> Docker</p>
+<p class="text-gray-500 text-xs">> Kubernetes</p>
+</div>
+
+<!-- Dedicated Teams -->
+<div>
+<span class="block font-bold text-[#1c1917] mb-3">Dedicated Teams</span>
+<p class="text-gray-500 text-xs mb-1">> Full-Stack Engineers</p>
+<p class="text-gray-500 text-xs mb-1">> UI/UX Designers</p>
+<p class="text-gray-500 text-xs">> Marketing Specialists</p>
+</div>
+
+<!-- Growth, Marketing & Performance -->
+<div>
+<span class="block font-bold text-[#1c1917] mb-3">Growth & Marketing</span>
+<p class="text-gray-500 text-xs mb-1">> Google Ads</p>
+<p class="text-gray-500 text-xs mb-1">> Meta Ads</p>
+<p class="text-gray-500 text-xs mb-1">> SEO Tools</p>
+<p class="text-gray-500 text-xs">> Analytics Platforms</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</header>
+
+<!-- Mobile Menu -->
+<div data-mobile-menu class="fixed inset-0 top-20 z-40 bg-white hidden overflow-y-auto md:hidden">
+    <nav class="flex flex-col p-6 gap-4">
+        <a href="services.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Services</a>
+        <a href="how-we-work.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Methodology</a>
+        <a href="case-studies.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Case Studies</a>
+        <a href="about.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">About Us</a>
+        <a href="technologies.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Technologies</a>
+        <a href="contact_us.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Contact</a>
+        <div class="border-t border-gray-100 mt-4 pt-4">
+            <a href="contact_us.html" class="flex items-center justify-center h-12 rounded-full bg-gradient-to-r from-[#b90606] to-[#c80505] text-white font-bold shadow-glow hover:opacity-90 transition-all">Get Started</a>
+        </div>
+    </nav>
+</div>
+
+<main>
+<section class="relative w-full pt-32 pb-20 lg:pt-40 lg:pb-28 bg-white overflow-hidden">
+<div class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-900/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3 pointer-events-none"></div>
+<div class="mx-auto max-w-[1400px] px-6 lg:px-10 relative z-10">
+<nav class="flex items-center gap-2 text-sm mb-8 lg:mb-10">
+<a href="index.html" class="text-[#1c1917] hover:text-primary transition-colors">Home</a>
+<span class="text-gray-400">→</span>
+<span class="text-primary font-medium">Technologies</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+<div class="lg:col-span-7 relative">
+<div class="absolute top-0 right-0 text-[8rem] sm:text-[10rem] font-display font-bold text-gray-100 select-none leading-none -z-10">Technologies</div>
+<h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-[#1c1917] mb-6">
+Revolutionary Technologies for a Changing World
+</h1>
+<p class="text-base sm:text-lg text-gray-500 mb-8 leading-relaxed max-w-xl">
+At WebHouse Inc., we harness the power of revolutionary technologies, employing a diverse range of programming languages and platforms to create custom solutions that perfectly align with the unique needs of our clients.
+</p>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-sm font-medium text-gray-600">
+<li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>Emerging technology adoption</li>
+<li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>Agile development process</li>
+<li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>Cross-platform compatibility</li>
+<li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>Scalable infrastructure management</li>
+</ul>
+</div>
+<div class="lg:col-span-5">
+<div class="bg-white rounded-[2rem] border border-gray-100 shadow-lg p-6 sm:p-8">
+<h2 class="text-xl font-display font-bold text-[#1c1917] mb-6">
+Book a Free <span class="text-primary">Consultation</span>
+<span class="material-symbols-outlined text-primary align-middle text-2xl ml-1">arrow_forward</span>
+</h2>
+<form id="heroConsultForm" class="space-y-5">
+<div>
+<input class="w-full bg-transparent border-0 border-b border-gray-200 py-3 px-0 text-[#1c1917] placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-0 transition-colors" type="text" placeholder="Full Name" required/>
+</div>
+<div>
+<input class="w-full bg-transparent border-0 border-b border-gray-200 py-3 px-0 text-[#1c1917] placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-0 transition-colors" type="email" placeholder="Email" required/>
+</div>
+<div>
+<input class="w-full bg-transparent border-0 border-b border-gray-200 py-3 px-0 text-[#1c1917] placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-0 transition-colors" type="tel" placeholder="Number"/>
+</div>
+<div>
+<textarea class="w-full bg-transparent border-0 border-b border-gray-200 py-3 px-0 text-[#1c1917] placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-0 transition-colors resize-y min-h-[80px]" placeholder="Describe Your Project Need."></textarea>
+</div>
+<p class="text-xs text-gray-500">
+By submitting this form, you agree to our <a href="#" class="text-primary hover:underline">Privacy Policy</a>
+</p>
+<button type="submit" class="w-full flex items-center justify-center gap-2 rounded-full border-2 border-primary bg-white text-primary font-bold py-4 hover:bg-primary hover:text-white transition-all">
+Get In Touch
+</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ===================== LANGUAGES SECTION ===================== -->
+<section class="py-24 border-t border-gray-100 bg-background-alt">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+
+<span class="text-primary font-mono text-sm tracking-widest uppercase font-bold flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+Languages & Frameworks
+</span>
+
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-[#1c1917] mb-12 tracking-tight">
+Engineering technologies powering our solutions.
+</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+<!-- .NET -->
+<div class="tech-card">
+<h3>.NET / C#</h3>
+<p>Enterprise applications, APIs, and cloud-native backend systems built for scalability.</p>
+</div>
+
+<!-- Java -->
+<div class="tech-card">
+<h3>Java</h3>
+<p>Android development and enterprise backend systems powering mission-critical solutions.</p>
+</div>
+
+<!-- Node.js -->
+<div class="tech-card">
+<h3>Node.js</h3>
+<p>High-performance APIs and real-time applications for scalable web platforms.</p>
+</div>
+
+<!-- PHP -->
+<div class="tech-card">
+<h3>PHP</h3>
+<p>Robust CMS platforms, e-commerce systems, and custom backend solutions.</p>
+</div>
+
+<!-- Python -->
+<div class="tech-card">
+<h3>Python</h3>
+<p>AI systems, automation workflows, backend services, and data pipelines.</p>
+</div>
+<!-- Go -->
+<div class="tech-card">
+<h3>Go (Golang)</h3>
+<p>High-performance backend services and cloud-native microservices built for scalability and reliability.</p>
+</div>
+
+<!-- JavaScript -->
+<div class="tech-card">
+<h3>JavaScript / TypeScript</h3>
+<p>Modern full-stack development powering web, SaaS, and scalable frontend ecosystems.</p>
+</div>
+
+<!-- React -->
+<div class="tech-card">
+<h3>React / Next.js</h3>
+<p>Enterprise dashboards, SaaS platforms, and high-performance frontend applications.</p>
+</div>
+
+<!-- Swift -->
+<div class="tech-card">
+<h3>Swift</h3>
+<p>Native iOS applications optimized for performance and Apple ecosystem integration.</p>
+</div>
+
+<!-- Kotlin -->
+<div class="tech-card">
+<h3>Kotlin</h3>
+<p>Modern Android application development with scalable architecture.</p>
+</div>
+
+<!-- Flutter -->
+<div class="tech-card">
+<h3>Flutter</h3>
+<p>Cross-platform mobile applications with unified codebases for iOS and Android.</p>
+</div>
+
+<!-- React Native -->
+<div class="tech-card">
+<h3>React Native</h3>
+<p>Fast cross-platform mobile app development using shared JavaScript architecture.</p>
+</div>
+
+<!-- TensorFlow -->
+<div class="tech-card">
+<h3>TensorFlow</h3>
+<p>Machine learning and predictive modeling for intelligent enterprise systems.</p>
+</div>
+
+<!-- PyTorch -->
+<div class="tech-card">
+<h3>PyTorch</h3>
+<p>Deep learning frameworks for computer vision, NLP, and AI-driven automation.</p>
+</div>
+
+<!-- HTML5 -->
+<div class="tech-card">
+<h3>HTML5 / CSS3</h3>
+<p>Semantic markup and modern UI foundations for scalable web experiences.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ===================== PLATFORMS SECTION ===================== -->
+<section id="platforms" class="py-24 border-t border-gray-100 bg-white">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+
+<span class="text-primary font-mono text-sm tracking-widest uppercase font-bold flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+Platforms & Infrastructure
+</span>
+
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-[#1c1917] mb-12 tracking-tight">
+Cloud, enterprise and growth platforms we integrate with.
+</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+<!-- AWS -->
+<div class="tech-card">
+<h3>AWS</h3>
+<p>Cloud-native architectures, serverless applications, and enterprise hosting.</p>
+</div>
+
+<!-- Azure -->
+<div class="tech-card">
+<h3>Microsoft Azure</h3>
+<p>Secure cloud infrastructure and enterprise-grade DevOps environments.</p>
+</div>
+
+<!-- GCP -->
+<div class="tech-card">
+<h3>Google Cloud Platform</h3>
+<p>Data-first cloud systems and scalable application infrastructure.</p>
+</div>
+
+<!-- Docker -->
+<div class="tech-card">
+<h3>Docker</h3>
+<p>Containerized deployment ensuring consistent development and production environments.</p>
+</div>
+
+<!-- Kubernetes -->
+<div class="tech-card">
+<h3>Kubernetes</h3>
+<p>Container orchestration for scalable, resilient enterprise applications.</p>
+</div>
+
+<!-- SAP -->
+<div class="tech-card">
+<h3>SAP</h3>
+<p>Enterprise ERP systems enabling operational excellence and structured workflows.</p>
+</div>
+
+<!-- Oracle -->
+<div class="tech-card">
+<h3>Oracle</h3>
+<p>Enterprise databases and cloud platforms for large-scale business systems.</p>
+</div>
+
+<!-- Shopify -->
+<div class="tech-card">
+<h3>Shopify</h3>
+<p>Custom e-commerce storefronts and scalable online retail solutions.</p>
+</div>
+
+<!-- Magento -->
+<div class="tech-card">
+<h3>Magento</h3>
+<p>Enterprise-grade e-commerce ecosystems for complex global businesses.</p>
+</div>
+
+<!-- Google Ads -->
+<div class="tech-card">
+<h3>Google Ads</h3>
+<p>Performance marketing campaigns for scalable digital growth.</p>
+</div>
+
+<!-- Meta Ads -->
+<div class="tech-card">
+<h3>Meta Ads</h3>
+<p>Advanced social acquisition strategies across Facebook & Instagram.</p>
+</div>
+
+<!-- Salesforce -->
+<div class="tech-card">
+<h3>Salesforce</h3>
+<p>Enterprise CRM solutions enabling sales automation, customer engagement, and workflow optimization.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="py-24 border-t border-gray-100 bg-[#0c0a09] relative overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(185,6,6,0.08),transparent_50%)] pointer-events-none"></div>
+<div class="max-w-[1400px] mx-auto px-6 lg:px-10 relative z-10 text-center">
+<h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight">
+Have a project to discuss?
+</h2>
+<p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+We're ready. Let's connect and build something extraordinary with the right technology stack.
+</p>
+<a href="contact_us.html" class="inline-flex h-14 items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#b90606] to-[#c80505] px-8 text-base font-bold text-white shadow-glow hover:opacity-90 transition-all hover:-translate-y-0.5">
+Get In Touch
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</section>
+
+<section class="w-full py-20 sm:py-24 lg:py-32 bg-white border-t border-gray-100">
+<div class="mx-auto max-w-[1400px] px-6 lg:px-10">
+<div class="flex flex-col items-center gap-12 lg:gap-16">
+<div class="text-center max-w-3xl relative">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 text-[6rem] sm:text-[8rem] font-display font-bold text-gray-100 select-none leading-none pointer-events-none -z-10">Clientele</div>
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-[#1c1917] mb-4 tracking-tight relative z-10">
+Our Clients
+</h2>
+<p class="text-base sm:text-lg text-gray-600 leading-relaxed relative z-10">
+We contribute to these partnership programs, supported by global technology experts. Partnering with industry leaders, we offer quality technology solutions that meet your business needs.
+</p>
+</div>
+<div class="w-full border border-gray-200 rounded-lg overflow-hidden">
+<div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 divide-x divide-y divide-gray-200 bg-white">
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/honda.png" alt="Honda" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/itel.png" alt="itel" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/scb.png" alt="SCB" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/utopia.png" alt="Utopia" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/1-1-768x768.png" alt="Client" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/2-1-768x768.png" alt="Client" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/3-1-768x768.png" alt="Client" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/3-768x768.png" alt="Client" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/4-1-768x768.png" alt="Client" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/4-768x768.png" alt="Client" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/5-768x768.png" alt="Client" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/6-1-768x768.png" alt="Client" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/7-768x768.png" alt="Client" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/8-1-768x768.png" alt="Client" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/8-768x768.png" alt="Client" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/9-1-768x768.png" alt="Client" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/9-768x768.png" alt="Client" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/10-1-768x768.png" alt="Client" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/11-1-768x768.png" alt="Client" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/11-768x768.png" alt="Client" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/12-1-768x768.png" alt="Client" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/13-1-768x768.png" alt="Client" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/13-768x768.png" alt="Client" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+<div class="flex items-center justify-center p-6 sm:p-8 min-h-[100px]">
+<img src="assets/images/clients/14-768x768.png" alt="Client" class="h-8 sm:h-12 w-auto object-contain max-h-14 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="w-full bg-white pt-20 pb-10 border-t border-gray-100">
+<div class="mx-auto flex max-w-[1400px] flex-col justify-between gap-16 px-6 lg:px-10">
+
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+
+<!-- LEFT BRAND -->
+<div class="col-span-1 md:col-span-4 flex flex-col gap-8">
+<div class="flex items-center gap-2">
+<img src="assets/images/logo.png" alt="WebHouse Inc." class="h-8 w-auto object-contain"/>
+</div>
+<p class="text-base leading-relaxed text-gray-500 max-w-sm">
+Strategic digital execution partner for forward-thinking enterprises. 
+We design, build, and scale technology-driven solutions globally.
+</p>
+</div>
+
+<!-- COMPANY -->
+<div class="col-span-1 md:col-span-2">
+<h4 class="text-sm font-bold uppercase tracking-wider text-[#1c1917] mb-6">
+Company
+</h4>
+<div class="flex flex-col gap-4">
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="v1_index.html">Home</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="about.html">Who We Are?</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="how-we-work.html">How We Work?</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="technologies.html">Technologies</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="contact_us.html">Contact</a>
+</div>
+</div>
+
+<!-- SERVICES -->
+<div class="col-span-1 md:col-span-3">
+<h4 class="text-sm font-bold uppercase tracking-wider text-[#1c1917] mb-6">
+Services
+</h4>
+<div class="flex flex-col gap-4">
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="services/product-platform-engineering.html">Product & Platform Engineering</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="services/custom-software-enterprise-systems.html">Custom Software & Enterprise Systems</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="services/web-ecommerce-engineering.html">Web & E-Commerce Engineering</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="services/ai-data-intelligent-systems.html">AI, Data & Intelligent Systems</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="services/cloud-devops-infrastructure.html">Cloud, DevOps & Infrastructure</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="services/dedicated-teams-staff-augmentation.html">Dedicated Teams & Staff Augmentation</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="services/growth-marketing-performance.html">Growth, Marketing & Performance</a>
+</div>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="col-span-1 md:col-span-3">
+<h4 class="text-sm font-bold uppercase tracking-wider text-[#1c1917] mb-6">
+Newsletter
+</h4>
+<p class="text-sm text-gray-500 mb-4">
+Get insights on technology, digital transformation, and growth strategies.
+</p>
+<div class="flex flex-col gap-3">
+<input 
+class="w-full rounded-lg border border-gray-200 bg-gray-50 px-4 py-2 text-sm focus:border-primary focus:ring-primary outline-none transition"
+placeholder="Your email address" 
+type="email"
+/>
+<button class="w-full bg-black text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-gradient-to-r hover:from-[#b90606] hover:to-[#c80505] transition-all">
+Subscribe
+</button>
+</div>
+</div>
+
+</div>
+
+<!-- BOTTOM BAR -->
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 border-t border-gray-100 pt-8">
+<p class="text-xs text-gray-400">© 2026 WebHouse Inc. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="text-xs font-medium text-gray-500 hover:text-black transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs font-medium text-gray-500 hover:text-black transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+
+</div>
+</footer>
+
+</div>
+<script src="js/main.js"></script>
+<script src="js/mega-menu.js"></script>
+<script>
+document.getElementById('heroConsultForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    window.location.href = 'contact_us.html';
+});
+</script>
+</body>
+</html>

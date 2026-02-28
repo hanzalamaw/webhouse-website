@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="WebHouse Inc. - Enterprise Services Deep Dive. Comprehensive digital execution partner for forward-thinking enterprises."/>
+    <meta name="keywords" content="web development, digital agency, enterprise solutions, product design, UX design, technology consulting, mobile apps, cloud services"/>
+    <meta name="author" content="WebHouse Inc."/>
+    <meta property="og:title" content="WebHouse Inc. - Enterprise Services"/>
+    <meta property="og:description" content="Comprehensive digital execution partner for forward-thinking enterprises. Explore our suite of services."/>
+    <meta property="og:type" content="website"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <title>WebHouse Inc. - Enterprise Services Deep Dive</title>
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind-config.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body class="bg-background-light text-[#1c1917] selection:bg-primary selection:text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<header class="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-gray-100 transition-all duration-300 group/header">
+<div class="mx-auto flex h-20 max-w-[1400px] items-center justify-between px-6 lg:px-10">
+<a href="index.html" class="flex items-center gap-3 group cursor-pointer">
+<img src="assets/images/logo.png" alt="WebHouse Inc." class="h-7 w-auto object-contain"/>
+</a>
+<nav class="hidden md:flex items-center gap-2 rounded-full p-1.5 bg-gray-100/50 border border-gray-200/50 backdrop-blur-md">
+<div class="relative" data-mega-menu-trigger="services">
+<a class="px-5 py-2 text-sm font-medium rounded-full text-gray-600 hover:text-black hover:bg-white hover:shadow-sm transition-all inline-block" href="services.html">Services</a>
+</div>
+<a class="px-5 py-2 text-sm font-medium rounded-full text-gray-600 hover:text-black hover:bg-white hover:shadow-sm transition-all" href="how-we-work.html">Methodology</a>
+<a class="px-5 py-2 text-sm font-medium rounded-full text-gray-600 hover:text-black hover:bg-white hover:shadow-sm transition-all" href="case-studies.html">Case Studies</a>
+<a class="px-5 py-2 text-sm font-medium rounded-full text-gray-600 hover:text-black hover:bg-white hover:shadow-sm transition-all" href="about.html">About Us</a>
+<div class="relative" data-mega-menu-trigger="technologies">
+<a class="px-5 py-2 text-sm font-medium rounded-full text-gray-600 hover:text-black hover:bg-white hover:shadow-sm transition-all inline-block" href="technologies.html">Technologies</a>
+</div>
+<a class="px-5 py-2 text-sm font-medium rounded-full text-gray-600 hover:text-black hover:bg-white hover:shadow-sm transition-all" href="contact_us.html">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex h-10 items-center justify-center rounded-full bg-transparent px-5 text-sm font-bold text-black hover:text-primary transition-all">Log in</button>
+<a href="contact_us.html" class="hidden sm:flex h-10 items-center justify-center rounded-full bg-gradient-to-r from-[#b90606] to-[#c80505] px-5 text-sm font-bold text-white shadow-glow hover:opacity-90 transition-all transform hover:scale-105">Get Started</a>
+<button class="md:hidden p-2 text-gray-600 hover:text-primary transition-colors" aria-label="Toggle mobile menu" data-mobile-menu-toggle><span class="material-symbols-outlined">menu</span></button>
+</div>
+</div>
+<!-- Services Mega Menu -->
+<div data-mega-menu-panel="services" class="absolute left-0 right-0 top-full pt-0 bg-white border-b border-gray-100 shadow-xl invisible opacity-0 transition-all duration-200 z-40">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-4 pr-8 border-r border-gray-100"><h3 class="font-display text-xl font-bold text-[#1c1917] mb-3">Built to Win</h3><p class="text-sm text-gray-500 leading-relaxed mb-6">Transforming business with our future-ready tech solutions. Get custom products for accelerated digital transformation across industries globally.</p><a href="contact_us.html" class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all">Get In Touch <span class="material-symbols-outlined text-lg">arrow_forward</span></a></div>
+<div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-6">
+<div><a href="services/product-platform-engineering.html" class="block font-bold text-[#1c1917] hover:text-primary mb-3">Product &amp; Platform Engineering</a><p class="text-gray-500 text-xs mb-1">&gt; iOS App Engineering</p><p class="text-gray-500 text-xs mb-1">&gt; Android App Engineering</p><p class="text-gray-500 text-xs">&gt; Cross-Platform Solutions</p></div>
+<div><a href="services/custom-software-enterprise-systems.html" class="block font-bold text-[#1c1917] hover:text-primary mb-3">Custom Software &amp; Enterprise Systems</a><p class="text-gray-500 text-xs mb-1">&gt; ERP Systems</p><p class="text-gray-500 text-xs mb-1">&gt; CRM Platforms</p><p class="text-gray-500 text-xs">&gt; CMS Solutions</p></div>
+<div><a href="services/web-ecommerce-engineering.html" class="block font-bold text-[#1c1917] hover:text-primary mb-3">Web &amp; E-Commerce Engineering</a><p class="text-gray-500 text-xs mb-1">&gt; E-Commerce Platform Development</p><p class="text-gray-500 text-xs">&gt; Enterprise Web Portals &amp; Dashboards</p></div>
+<div><a href="services/ai-data-intelligent-systems.html" class="block font-bold text-[#1c1917] hover:text-primary mb-3">AI, Data &amp; Intelligent Systems</a><p class="text-gray-500 text-xs mb-1">&gt; Generative AI Solutions</p><p class="text-gray-500 text-xs mb-1">&gt; Natural Language Processing (NLP)</p><p class="text-gray-500 text-xs">&gt; AI Agents &amp; Workflow Automation</p></div>
+<div><a href="services/cloud-devops-infrastructure.html" class="block font-bold text-[#1c1917] hover:text-primary mb-3">Cloud, DevOps &amp; Infrastructure</a><p class="text-gray-500 text-xs mb-1">&gt; Cloud-Native Development</p><p class="text-gray-500 text-xs mb-1">&gt; Cloud Migration</p><p class="text-gray-500 text-xs">&gt; Infrastructure Management</p></div>
+<div><a href="services/dedicated-teams-staff-augmentation.html" class="block font-bold text-[#1c1917] hover:text-primary mb-3">Dedicated Teams &amp; Staff Augmentation</a><p class="text-gray-500 text-xs mb-1">&gt; Dedicated Engineers</p><p class="text-gray-500 text-xs mb-1">&gt; Dedicated Designers</p><p class="text-gray-500 text-xs">&gt; Dedicated Marketeers</p></div>
+<div><a href="services/growth-marketing-performance.html" class="block font-bold text-[#1c1917] hover:text-primary mb-3">Growth, Marketing &amp; Performance</a><p class="text-gray-500 text-xs mb-1">&gt; Social Media Growth</p><p class="text-gray-500 text-xs mb-1">&gt; Search Engine Marketing (SEM)</p><p class="text-gray-500 text-xs">&gt; Search Engine Optimization (SEO)</p></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Technologies Mega Menu -->
+<div data-mega-menu-panel="technologies" class="absolute left-0 right-0 top-full pt-0 bg-white border-b border-gray-100 shadow-xl invisible opacity-0 transition-all duration-200 z-40">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+<!-- LEFT SIDE -->
+<div class="lg:col-span-4 pr-8 border-r border-gray-100">
+<h3 class="font-display text-xl font-bold text-[#1c1917] mb-3">Technology Stack</h3>
+<p class="text-sm text-gray-500 leading-relaxed mb-6">
+Our engineering capabilities align directly with each service vertical — from mobile and AI to enterprise and cloud-native infrastructure.
+</p>
+<a href="technologies.html" class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all">
+View All Technologies 
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</a>
+</div>
+
+<!-- RIGHT SIDE -->
+<div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-6">
+
+<!-- Product & Platform Engineering -->
+<div>
+<span class="block font-bold text-[#1c1917] mb-3">Product & Platform Engineering</span>
+<p class="text-gray-500 text-xs mb-1">> Swift</p>
+<p class="text-gray-500 text-xs mb-1">> Kotlin</p>
+<p class="text-gray-500 text-xs mb-1">> Flutter</p>
+<p class="text-gray-500 text-xs">> React Native</p>
+</div>
+
+<!-- Custom Software & Enterprise Systems -->
+<div>
+<span class="block font-bold text-[#1c1917] mb-3">Enterprise Systems</span>
+<p class="text-gray-500 text-xs mb-1">> .NET / C#</p>
+<p class="text-gray-500 text-xs mb-1">> Java</p>
+<p class="text-gray-500 text-xs mb-1">> Node.js</p>
+<p class="text-gray-500 text-xs">> SAP / Oracle</p>
+</div>
+
+<!-- Web & E-Commerce Engineering -->
+<div>
+<span class="block font-bold text-[#1c1917] mb-3">Web & E-Commerce</span>
+<p class="text-gray-500 text-xs mb-1">> React / Next.js</p>
+<p class="text-gray-500 text-xs mb-1">> PHP</p>
+<p class="text-gray-500 text-xs mb-1">> Shopify</p>
+<p class="text-gray-500 text-xs">> Magento</p>
+</div>
+
+<!-- AI, Data & Intelligent Systems -->
+<div>
+<span class="block font-bold text-[#1c1917] mb-3">AI & Intelligent Systems</span>
+<p class="text-gray-500 text-xs mb-1">> Python</p>
+<p class="text-gray-500 text-xs mb-1">> TensorFlow</p>
+<p class="text-gray-500 text-xs mb-1">> PyTorch</p>
+<p class="text-gray-500 text-xs">> LLM Integrations</p>
+</div>
+
+<!-- Cloud, DevOps & Infrastructure -->
+<div>
+<span class="block font-bold text-[#1c1917] mb-3">Cloud & DevOps</span>
+<p class="text-gray-500 text-xs mb-1">> AWS</p>
+<p class="text-gray-500 text-xs mb-1">> Azure</p>
+<p class="text-gray-500 text-xs mb-1">> Docker</p>
+<p class="text-gray-500 text-xs">> Kubernetes</p>
+</div>
+
+<!-- Dedicated Teams -->
+<div>
+<span class="block font-bold text-[#1c1917] mb-3">Dedicated Teams</span>
+<p class="text-gray-500 text-xs mb-1">> Full-Stack Engineers</p>
+<p class="text-gray-500 text-xs mb-1">> UI/UX Designers</p>
+<p class="text-gray-500 text-xs">> Marketing Specialists</p>
+</div>
+
+<!-- Growth, Marketing & Performance -->
+<div>
+<span class="block font-bold text-[#1c1917] mb-3">Growth & Marketing</span>
+<p class="text-gray-500 text-xs mb-1">> Google Ads</p>
+<p class="text-gray-500 text-xs mb-1">> Meta Ads</p>
+<p class="text-gray-500 text-xs mb-1">> SEO Tools</p>
+<p class="text-gray-500 text-xs">> Analytics Platforms</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</header>
+
+<!-- Mobile Menu -->
+<div data-mobile-menu class="fixed inset-0 top-20 z-40 bg-white hidden overflow-y-auto md:hidden">
+    <nav class="flex flex-col p-6 gap-4">
+        <a href="services.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Services</a>
+        <a href="how-we-work.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Methodology</a>
+        <a href="case-studies.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Case Studies</a>
+        <a href="about.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">About Us</a>
+        <a href="technologies.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Technologies</a>
+        <a href="contact_us.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Contact</a>
+        <div class="border-t border-gray-100 mt-4 pt-4">
+            <a href="contact_us.html" class="flex items-center justify-center h-12 rounded-full bg-gradient-to-r from-[#b90606] to-[#c80505] text-white font-bold shadow-glow hover:opacity-90 transition-all">Get Started</a>
+        </div>
+    </nav>
+</div>
+
+<main>
+<section class="py-16 lg:py-24 relative overflow-hidden pt-32">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-10 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                        Enterprise Solutions
+                    </div>
+<h1 class="text-4xl lg:text-6xl font-display font-bold text-[#1c1917] mb-6 leading-tight">
+                        Strategic Digital <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-[#b90606] to-[#c80505]">Execution Partner.</span>
+</h1>
+<p class="text-lg text-gray-500 mb-8 leading-relaxed max-w-xl">
+                        We don't just build software; we engineer the digital future of your enterprise. Explore our comprehensive suite of services designed for scalability, security, and market impact.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-[#1c1917] text-white hover:bg-primary px-6 py-3 rounded-full font-bold transition-all shadow-lg hover:-translate-y-1" href="#engineering">
+                            Explore Services
+                        </a>
+<a class="flex items-center gap-2 px-6 py-3 rounded-full font-medium text-[#1c1917] hover:text-primary transition-colors border border-gray-200" href="#">
+<span class="material-symbols-outlined text-primary">play_circle</span> Watch Reel
+                        </a>
+</div>
+</div>
+<div class="relative">
+<div class="relative group rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-100 rotate-1 hover:rotate-0 transition-transform duration-500">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-overlay z-10"></div>
+<img alt="Modern smartphone showing abstract digital interface app" class="w-full h-auto object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqnaZiGWN8-dRdQZUtPqyJkslbGVHAtRCslu9UC7RIkyQQAb1OG0cvsh4W8pi8Z2bwSWjI-B-2zABaP6h7iVkQbk1S9FDD53qdvJjYPQLVONrExqEKUmRXMzMU5LnRjBtiFdq7Bo2n7aGW2ylJZgGlYofdBEV7YC47LknRghXggs8FXOLetPY9gvFDLxSuWqbVqBJFcAA3ao76pGvsJ-MleQCktBGdEcQAKYefffCNMyV8TgeMCZDVRIFpStjZCWOBjIEY3Gbj7g"/>
+</div>
+<div class="absolute -z-10 top-10 -right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="absolute -z-10 -bottom-10 -left-10 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl"></div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="bg-white">
+<section class="py-24 border-t border-gray-100" id="engineering">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-4 sticky top-32 h-fit">
+<span class="text-primary font-bold text-5xl opacity-20 font-display">01</span>
+<h2 class="text-3xl lg:text-4xl font-display font-bold text-[#1c1917] mt-2 mb-6">Product &amp; Platform Engineering</h2>
+<p class="text-gray-500 text-lg leading-relaxed mb-8">
+                            We engineer robust, scalable mobile and digital platforms that serve as the foundation of your digital interaction strategy. Our approach prioritizes native performance, security, and user-centric design principles to deliver market-leading applications.
+                        </p>
+<a class="inline-flex items-center text-primary font-bold hover:text-[#c80505] group uppercase tracking-wider text-sm" href="#">
+                            View Tech Stack <span class="material-symbols-outlined ml-2 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-8 rounded-[2.5rem] bg-surface-light hover:bg-white border border-gray-100 hover:border-primary/30 hover:shadow-xl transition-all duration-300 group">
+<span class="material-symbols-outlined text-4xl text-primary mb-4 group-hover:scale-110 transition-transform">phone_iphone</span>
+<h3 class="text-xl font-bold text-[#1c1917] mb-3">iOS App Engineering</h3>
+<p class="text-sm text-gray-500">Native Swift &amp; SwiftUI development focused on the Apple ecosystem. We build high-fidelity applications that leverage the latest iOS capabilities for superior user experience.</p>
+</div>
+<div class="p-8 rounded-[2.5rem] bg-surface-light hover:bg-white border border-gray-100 hover:border-primary/30 hover:shadow-xl transition-all duration-300 group">
+<span class="material-symbols-outlined text-4xl text-primary mb-4 group-hover:scale-110 transition-transform">phone_android</span>
+<h3 class="text-xl font-bold text-[#1c1917] mb-3">Android App Engineering</h3>
+<p class="text-sm text-gray-500">Robust Kotlin-based development for the diverse Android landscape. We ensure compatibility across devices while maintaining high performance and security standards.</p>
+</div>
+<div class="p-8 rounded-[2.5rem] bg-surface-light hover:bg-white border border-gray-100 hover:border-primary/30 hover:shadow-xl transition-all duration-300 group md:col-span-2">
+<span class="material-symbols-outlined text-4xl text-primary mb-4 group-hover:scale-110 transition-transform">layers</span>
+<h3 class="text-xl font-bold text-[#1c1917] mb-3">Cross-Platform Solutions</h3>
+<p class="text-sm text-gray-500">Efficient code-sharing strategies using React Native and Flutter. Perfect for rapid time-to-market and unified brand experiences across both iOS and Android platforms without compromising on native feel.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-24 border-t border-gray-100 bg-surface-light/30">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-4 sticky top-32 h-fit order-1 lg:order-1">
+<span class="text-primary font-bold text-5xl opacity-20 font-display">02</span>
+<h2 class="text-3xl lg:text-4xl font-display font-bold text-[#1c1917] mt-2 mb-6">Custom Software &amp; Enterprise Systems</h2>
+<p class="text-gray-500 text-lg leading-relaxed mb-8">
+                            Off-the-shelf software often falls short of unique business needs. We architect bespoke enterprise systems tailored to your specific operational workflows, ensuring seamless integration, data consistency, and streamlined processes across your organization.
+                        </p>
+<a class="inline-flex items-center text-primary font-bold hover:text-[#c80505] group uppercase tracking-wider text-sm" href="#">
+                            Discuss Architecture <span class="material-symbols-outlined ml-2 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6 order-2 lg:order-2">
+<div class="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
+<div class="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary">dns</span>
+</div>
+<h3 class="font-bold text-lg text-[#1c1917] mb-2">ERP Systems</h3>
+<p class="text-sm text-gray-500">Custom Enterprise Resource Planning modules to unify your business data and operations.</p>
+</div>
+<div class="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
+<div class="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary">people</span>
+</div>
+<h3 class="font-bold text-lg text-[#1c1917] mb-2">CRM Platforms</h3>
+<p class="text-sm text-gray-500">Tailored Customer Relationship Management tools that fit your sales cycle perfectly.</p>
+</div>
+<div class="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
+<div class="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary">dashboard</span>
+</div>
+<h3 class="font-bold text-lg text-[#1c1917] mb-2">CMS Solutions</h3>
+<p class="text-sm text-gray-500">Headless and traditional Content Management Systems for agile content delivery.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-24 border-t border-gray-100">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-4 sticky top-32 h-fit">
+<span class="text-primary font-bold text-5xl opacity-20 font-display">03</span>
+<h2 class="text-3xl lg:text-4xl font-display font-bold text-[#1c1917] mt-2 mb-6">Web &amp; E-Commerce Engineering</h2>
+<p class="text-gray-500 text-lg leading-relaxed mb-8">
+                            Drive revenue and engagement with high-performance web solutions. From complex B2B portals to high-traffic consumer e-commerce storefronts, we build for speed, conversion, and reliability, ensuring your digital storefront never sleeps.
+                        </p>
+<a class="inline-flex items-center text-primary font-bold hover:text-[#c80505] group uppercase tracking-wider text-sm" href="case-studies.html">
+                            See Portfolio <span class="material-symbols-outlined ml-2 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="lg:col-span-8 flex flex-col gap-8">
+<div class="flex flex-col md:flex-row gap-6 p-6 rounded-[2.5rem] border border-gray-200 bg-white">
+<div class="md:w-1/3 flex items-center justify-center bg-surface-light rounded-2xl p-8">
+<span class="material-symbols-outlined text-6xl text-primary/80">shopping_cart</span>
+</div>
+<div class="md:w-2/3 flex flex-col justify-center">
+<h3 class="text-xl font-bold text-[#1c1917] mb-2">E-Commerce Platform Development</h3>
+<p class="text-gray-500 mb-4">Expert Shopify Plus implementation and custom headless commerce builds. We optimize for checkout speed, mobile responsiveness, and higher average order value.</p>
+<ul class="flex gap-4 text-xs font-semibold uppercase text-primary tracking-wide">
+<li>Shopify Plus</li>
+<li>WooCommerce</li>
+<li>Custom APIs</li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-6 p-6 rounded-[2.5rem] border border-gray-200 bg-white">
+<div class="md:w-1/3 flex items-center justify-center bg-surface-light rounded-2xl p-8">
+<span class="material-symbols-outlined text-6xl text-primary/80">web</span>
+</div>
+<div class="md:w-2/3 flex flex-col justify-center">
+<h3 class="text-xl font-bold text-[#1c1917] mb-2">Enterprise Web Portals &amp; Dashboards</h3>
+<p class="text-gray-500 mb-4">Secure, role-based portals for employees, partners, or customers. We visualize complex data and streamline interactions through intuitive dashboard interfaces.</p>
+<ul class="flex gap-4 text-xs font-semibold uppercase text-primary tracking-wide">
+<li>React / Vue</li>
+<li>Real-time Data</li>
+<li>Analytics</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-24 border-t border-gray-100">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-4 sticky top-32 h-fit">
+<span class="text-primary font-bold text-5xl opacity-20 font-display">04</span>
+<h2 class="text-3xl lg:text-4xl font-display font-bold text-[#1c1917] mt-2 mb-6">AI, Data &amp; Intelligent Systems</h2>
+<p class="text-gray-500 text-lg leading-relaxed mb-8">
+                            Harness the power of intelligent systems. We help enterprises unlock the value of their data through predictive modeling, generative AI, and automated workflows that drive smarter decision-making.
+                        </p>
+</div>
+<div class="lg:col-span-8 space-y-8">
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-[#1c1917]">Generative AI Solutions</h3>
+<p class="mt-2 text-gray-500">Custom LLM integration and fine-tuning. We build content generation tools and intelligent assistants tailored to your brand voice and knowledge base.</p>
+</div>
+</div>
+<div class="w-full h-px bg-gray-100"></div>
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined">record_voice_over</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-[#1c1917]">Natural Language Processing (NLP)</h3>
+<p class="mt-2 text-gray-500">Sophisticated sentiment analysis, automated support ticket routing, and chatbot systems that understand context and intent.</p>
+</div>
+</div>
+<div class="w-full h-px bg-gray-100"></div>
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-[#1c1917]">AI Agents &amp; Workflow Automation</h3>
+<p class="mt-2 text-gray-500">Autonomous agents that perform complex tasks across your software ecosystem, reducing manual overhead and increasing operational speed.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-24 border-t border-gray-100 bg-surface-light/30">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-4 sticky top-32 h-fit">
+<span class="text-primary font-bold text-5xl opacity-20 font-display">05</span>
+<h2 class="text-3xl lg:text-4xl font-display font-bold text-[#1c1917] mt-2 mb-6">Cloud, DevOps &amp; Infrastructure</h2>
+<p class="text-gray-500 text-lg leading-relaxed mb-8">
+                             Modernize your infrastructure for agility and scale. Our cloud-native approach ensures your applications are resilient, secure, and cost-effective, backed by automated CI/CD pipelines.
+                        </p>
+</div>
+<div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-white p-8 rounded-2xl border-l-4 border-primary shadow-sm">
+<h3 class="text-lg font-bold mb-3 text-[#1c1917]">Cloud-Native Development</h3>
+<p class="text-sm text-gray-500">Microservices architecture on AWS, Azure, or Google Cloud. We build scalable containers using Docker and Kubernetes.</p>
+</div>
+<div class="bg-white p-8 rounded-2xl border-l-4 border-primary shadow-sm">
+<h3 class="text-lg font-bold mb-3 text-[#1c1917]">Cloud Migration</h3>
+<p class="text-sm text-gray-500">Seamlessly transition legacy on-premise systems to the cloud with minimal downtime and data integrity assurance.</p>
+</div>
+<div class="bg-white p-8 rounded-2xl border-l-4 border-primary shadow-sm md:col-span-2">
+<h3 class="text-lg font-bold mb-3 text-[#1c1917]">Infrastructure Management</h3>
+<p class="text-sm text-gray-500">24/7 monitoring, security patching, and cost optimization. We act as your extended DevOps team.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-24 border-t border-gray-100">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+<div class="flex flex-col items-center text-center mb-16">
+<span class="text-primary font-bold text-xl opacity-20 font-display mb-2">06</span>
+<h2 class="text-3xl lg:text-4xl font-display font-bold text-[#1c1917] mb-4">Dedicated Teams &amp; Staff Augmentation</h2>
+<p class="text-gray-500 text-lg max-w-2xl">
+                        Scale your capacity instantly with our vetted talent. We provide cohesive, dedicated teams that integrate with your culture and processes.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="text-center p-8 border border-gray-200 rounded-[2.5rem] hover:border-primary transition-colors bg-white">
+<div class="w-20 h-20 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-4xl">code</span>
+</div>
+<h3 class="text-xl font-bold mb-2 text-[#1c1917]">Dedicated Engineers</h3>
+<p class="text-sm text-gray-500">Senior frontend, backend, and full-stack developers ready to tackle your backlog.</p>
+</div>
+<div class="text-center p-8 border border-gray-200 rounded-[2.5rem] hover:border-primary transition-colors bg-white">
+<div class="w-20 h-20 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-4xl">brush</span>
+</div>
+<h3 class="text-xl font-bold mb-2 text-[#1c1917]">Dedicated Designers</h3>
+<p class="text-sm text-gray-500">UI/UX experts who understand design systems and user flows.</p>
+</div>
+<div class="text-center p-8 border border-gray-200 rounded-[2.5rem] hover:border-primary transition-colors bg-white">
+<div class="w-20 h-20 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-4xl">campaign</span>
+</div>
+<h3 class="text-xl font-bold mb-2 text-[#1c1917]">Dedicated Marketeers</h3>
+<p class="text-sm text-gray-500">Growth hackers and strategists to amplify your product launch.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-24 border-t border-gray-100">
+<div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-4 sticky top-32 h-fit">
+<span class="text-primary font-bold text-5xl opacity-20 font-display">07</span>
+<h2 class="text-3xl lg:text-4xl font-display font-bold text-[#1c1917] mt-2 mb-6">Growth, Marketing &amp; Performance</h2>
+<p class="text-gray-500 text-lg leading-relaxed mb-8">
+                            Data-driven marketing that delivers ROI. We don't just build; we grow. Our performance marketing strategies are designed to maximize visibility and conversion in a crowded digital landscape.
+                        </p>
+<a class="bg-gradient-to-r from-[#b90606] to-[#c80505] hover:opacity-90 text-white px-6 py-3 rounded-full font-bold shadow-glow transition-transform transform hover:-translate-y-1 inline-block" href="#">
+                            Start Growing
+                        </a>
+</div>
+<div class="lg:col-span-8">
+<div class="grid grid-cols-1 gap-6">
+<div class="flex items-center p-6 bg-white shadow-sm rounded-2xl border-l-8 border-primary">
+<div class="flex-1">
+<h3 class="text-xl font-bold text-[#1c1917]">Social Media Growth</h3>
+<p class="text-sm text-gray-500 mt-1">Strategic content planning and community management across LinkedIn, Twitter, and Instagram.</p>
+</div>
+<span class="material-symbols-outlined text-gray-300 text-4xl">thumb_up</span>
+</div>
+<div class="flex items-center p-6 bg-white shadow-sm rounded-2xl border-l-8 border-primary">
+<div class="flex-1">
+<h3 class="text-xl font-bold text-[#1c1917]">Search Engine Marketing (SEM)</h3>
+<p class="text-sm text-gray-500 mt-1">Paid acquisition campaigns on Google Ads and Bing optimized for CPA and ROAS.</p>
+</div>
+<span class="material-symbols-outlined text-gray-300 text-4xl">ads_click</span>
+</div>
+<div class="flex items-center p-6 bg-white shadow-sm rounded-2xl border-l-8 border-primary">
+<div class="flex-1">
+<h3 class="text-xl font-bold text-[#1c1917]">Search Engine Optimization (SEO)</h3>
+<p class="text-sm text-gray-500 mt-1">Technical SEO audits, content strategy, and backlink building to dominate organic search results.</p>
+</div>
+<span class="material-symbols-outlined text-gray-300 text-4xl">search</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<footer class="w-full bg-white pt-20 pb-10 border-t border-gray-100">
+<div class="mx-auto flex max-w-[1400px] flex-col justify-between gap-16 px-6 lg:px-10">
+
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+
+<!-- LEFT BRAND -->
+<div class="col-span-1 md:col-span-4 flex flex-col gap-8">
+<div class="flex items-center gap-2">
+<img src="assets/images/logo.png" alt="WebHouse Inc." class="h-8 w-auto object-contain"/>
+</div>
+<p class="text-base leading-relaxed text-gray-500 max-w-sm">
+Strategic digital execution partner for forward-thinking enterprises. 
+We design, build, and scale technology-driven solutions globally.
+</p>
+</div>
+
+<!-- COMPANY -->
+<div class="col-span-1 md:col-span-2">
+<h4 class="text-sm font-bold uppercase tracking-wider text-[#1c1917] mb-6">
+Company
+</h4>
+<div class="flex flex-col gap-4">
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="v1_index.html">Home</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="about.html">Who We Are?</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="how-we-work.html">How We Work?</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="technologies.html">Technologies</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="contact_us.html">Contact</a>
+</div>
+</div>
+
+<!-- SERVICES -->
+<div class="col-span-1 md:col-span-3">
+<h4 class="text-sm font-bold uppercase tracking-wider text-[#1c1917] mb-6">
+Services
+</h4>
+<div class="flex flex-col gap-4">
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="services/product-platform-engineering.html">Product & Platform Engineering</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="services/custom-software-enterprise-systems.html">Custom Software & Enterprise Systems</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="services/web-ecommerce-engineering.html">Web & E-Commerce Engineering</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="services/ai-data-intelligent-systems.html">AI, Data & Intelligent Systems</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="services/cloud-devops-infrastructure.html">Cloud, DevOps & Infrastructure</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="services/dedicated-teams-staff-augmentation.html">Dedicated Teams & Staff Augmentation</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="services/growth-marketing-performance.html">Growth, Marketing & Performance</a>
+</div>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="col-span-1 md:col-span-3">
+<h4 class="text-sm font-bold uppercase tracking-wider text-[#1c1917] mb-6">
+Newsletter
+</h4>
+<p class="text-sm text-gray-500 mb-4">
+Get insights on technology, digital transformation, and growth strategies.
+</p>
+<div class="flex flex-col gap-3">
+<input 
+class="w-full rounded-lg border border-gray-200 bg-gray-50 px-4 py-2 text-sm focus:border-primary focus:ring-primary outline-none transition"
+placeholder="Your email address" 
+type="email"
+/>
+<button class="w-full bg-black text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-gradient-to-r hover:from-[#b90606] hover:to-[#c80505] transition-all">
+Subscribe
+</button>
+</div>
+</div>
+
+</div>
+
+<!-- BOTTOM BAR -->
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 border-t border-gray-100 pt-8">
+<p class="text-xs text-gray-400">© 2026 WebHouse Inc. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="text-xs font-medium text-gray-500 hover:text-black transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs font-medium text-gray-500 hover:text-black transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+
+</div>
+</footer>
+</div>
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+<script src="js/mega-menu.js"></script>
+</body>
+</html>
+
