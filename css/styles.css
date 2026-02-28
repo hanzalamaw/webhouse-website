@@ -81,6 +81,26 @@ html {
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
+/* Clients logo marquee - single row, scrolling by default */
+@keyframes clients-marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.clients-marquee {
+    display: flex;
+    width: max-content;
+    animation: clients-marquee-scroll 45s linear infinite;
+}
+
+.clients-marquee:hover {
+    animation-play-state: paused;
+}
+
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
     *,
@@ -89,6 +109,13 @@ html {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+    .clients-marquee-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .clients-marquee {
+        animation: none;
     }
 }
 
