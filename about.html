@@ -36,7 +36,7 @@
 <img src="assets/images/logo.png" alt="WebHouse Inc." class="h-7 w-auto object-contain"/>
 </a>
 <nav class="hidden md:flex items-center gap-2 rounded-full p-1.5 bg-gray-100/50 border border-gray-200/50 backdrop-blur-md">
-    <a class="px-5 py-2 text-sm font-medium rounded-full text-gray-600 hover:text-black hover:bg-white hover:shadow-sm transition-all" href="v1_index.html">Home</a>
+    <a class="px-5 py-2 text-sm font-medium rounded-full text-gray-600 hover:text-black hover:bg-white hover:shadow-sm transition-all" href="index.html">Home</a>
     <a class="px-5 py-2 text-sm font-medium rounded-full text-gray-600 hover:text-black hover:bg-white hover:shadow-sm transition-all" href="about.html">Who We Are?</a>
     <a class="px-5 py-2 text-sm font-medium rounded-full text-gray-600 hover:text-black hover:bg-white hover:shadow-sm transition-all" href="how-we-work.html">How We Work?</a>
     <div class="relative" data-mega-menu-trigger="services">
@@ -48,7 +48,7 @@
 <a class="px-5 py-2 text-sm font-medium rounded-full text-gray-600 hover:text-black hover:bg-white hover:shadow-sm transition-all" href="contact_us.html">Contact</a>
 </nav>
 <div class="flex items-center gap-4">
-<button class="hidden sm:flex h-10 items-center justify-center rounded-full bg-transparent px-5 text-sm font-bold text-black hover:text-primary transition-all">Log in</button>
+<a href="contact_us.html" class="hidden sm:flex h-10 items-center justify-center rounded-full bg-transparent px-5 text-sm font-bold text-black hover:text-primary transition-all">Log in</a>
 <a href="contact_us.html" class="hidden sm:flex h-10 items-center justify-center rounded-full bg-gradient-to-r from-[#b90606] to-[#c80505] px-5 text-sm font-bold text-white shadow-glow hover:opacity-90 transition-all transform hover:scale-105">Get Started</a>
 <button class="md:hidden p-2 text-gray-600 hover:text-primary transition-colors" aria-label="Toggle mobile menu" data-mobile-menu-toggle><span class="material-symbols-outlined">menu</span></button>
 </div>
@@ -159,10 +159,10 @@ View All Technologies
 <!-- Mobile Menu -->
 <div data-mobile-menu class="fixed inset-0 top-20 z-40 bg-white hidden overflow-y-auto md:hidden">
     <nav class="flex flex-col p-6 gap-4">
-        <a href="services.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Services</a>
-        <a href="how-we-work.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Methodology</a>
-        <a href="case-studies.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Case Studies</a>
-        <a href="about.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">About Us</a>
+        <a href="index.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Home</a>
+        <a href="about.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Who We Are?</a>
+        <a href="how-we-work.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">How We Work?</a>
+        <a href="services.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">What We Do?</a>
         <a href="technologies.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Technologies</a>
         <a href="contact_us.html" class="px-4 py-3 text-lg font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg transition-all">Contact</a>
         <div class="border-t border-gray-100 mt-4 pt-4">
@@ -259,15 +259,15 @@ View All Technologies
             </div>
         </section>
 
-        <section class="py-24 px-6 lg:px-10 bg-background-alt overflow-hidden">
+        <section class="py-24 px-6 lg:px-10 bg-background-alt overflow-hidden" id="history">
             <div class="max-w-[1400px] mx-auto">
                 <div class="flex flex-col md:flex-row gap-16">
                     <div class="md:w-1/3">
                         <h2 class="font-display text-3xl md:text-4xl font-bold text-[#1c1917] mb-6">Our History</h2>
                         <p class="text-gray-600 mb-8">We started in 2015. From a small studio to a global digital powerhouse, our journey has been defined by a relentless pursuit of quality.</p>
-                        <button class="flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
+                        <a href="#history" class="flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
                             View Full Timeline <span class="material-symbols-outlined">arrow_right_alt</span>
-                        </button>
+                        </a>
                     </div>
                     <div class="md:w-2/3 relative">
                         <div class="absolute left-4 top-4 bottom-4 w-0.5 bg-gray-200"></div>
@@ -315,12 +315,12 @@ View All Technologies
                 <h2 class="font-display text-3xl md:text-5xl font-bold mb-6">Build your future with us.</h2>
                 <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">We are always looking for passionate builders, thinkers, and innovators to join our culture of excellence.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-gradient-to-r from-[#b90606] to-[#c80505] hover:opacity-90 transition-all text-white text-base font-bold shadow-glow">
+                    <a href="mailto:connect@webhouseinc.co?subject=Careers%20Inquiry" class="flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-gradient-to-r from-[#b90606] to-[#c80505] hover:opacity-90 transition-all text-white text-base font-bold shadow-glow">
                         View Open Positions
-                    </button>
-                    <button class="flex cursor-pointer items-center justify-center rounded-full h-12 px-8 border border-gray-600 hover:bg-white/5 transition-colors text-white text-base font-medium">
+                    </a>
+                    <a href="about.html" class="flex cursor-pointer items-center justify-center rounded-full h-12 px-8 border border-gray-600 hover:bg-white/5 transition-colors text-white text-base font-medium">
                         Read Our Culture Book
-                    </button>
+                    </a>
                 </div>
             </div>
         </section>
@@ -348,7 +348,7 @@ We design, build, and scale technology-driven solutions globally.
 Company
 </h4>
 <div class="flex flex-col gap-4">
-<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="v1_index.html">Home</a>
+<a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="index.html">Home</a>
 <a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="about.html">Who We Are?</a>
 <a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="how-we-work.html">How We Work?</a>
 <a class="text-sm font-medium text-gray-600 hover:text-primary transition-colors" href="technologies.html">Technologies</a>
@@ -380,16 +380,10 @@ Newsletter
 <p class="text-sm text-gray-500 mb-4">
 Get insights on technology, digital transformation, and growth strategies.
 </p>
-<div class="flex flex-col gap-3">
-<input 
-class="w-full rounded-lg border border-gray-200 bg-gray-50 px-4 py-2 text-sm focus:border-primary focus:ring-primary outline-none transition"
-placeholder="Your email address" 
-type="email"
-/>
-<button class="w-full bg-black text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-gradient-to-r hover:from-[#b90606] hover:to-[#c80505] transition-all">
-Subscribe
-</button>
-</div>
+<form data-newsletter-form class="flex flex-col gap-3">
+<input class="w-full rounded-lg border border-gray-200 bg-gray-50 px-4 py-2 text-sm focus:border-primary focus:ring-primary outline-none transition" placeholder="Your email address" type="email" required/>
+<button type="submit" class="w-full bg-black text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-gradient-to-r hover:from-[#b90606] hover:to-[#c80505] transition-all">Subscribe</button>
+</form>
 </div>
 
 </div>
@@ -398,8 +392,8 @@ Subscribe
 <div class="flex flex-col md:flex-row justify-between items-center gap-6 border-t border-gray-100 pt-8">
 <p class="text-xs text-gray-400">© 2026 WebHouse Inc. All rights reserved.</p>
 <div class="flex gap-8">
-<a class="text-xs font-medium text-gray-500 hover:text-black transition-colors" href="#">Privacy Policy</a>
-<a class="text-xs font-medium text-gray-500 hover:text-black transition-colors" href="#">Terms of Service</a>
+<a class="text-xs font-medium text-gray-500 hover:text-black transition-colors" href="mailto:connect@webhouseinc.co?subject=Privacy%20Policy%20Inquiry">Privacy Policy</a>
+<a class="text-xs font-medium text-gray-500 hover:text-black transition-colors" href="mailto:connect@webhouseinc.co?subject=Terms%20of%20Service%20Inquiry">Terms of Service</a>
 </div>
 </div>
 
