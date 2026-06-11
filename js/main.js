@@ -139,6 +139,7 @@
             form.action = url;
             form.target = iframeName;
             form.acceptCharset = 'UTF-8';
+            form.enctype = 'application/x-www-form-urlencoded';
             form.style.display = 'none';
 
             Object.keys(payload).forEach(function(key) {
@@ -158,11 +159,11 @@
                 window.clearTimeout(timer);
                 form.remove();
                 if (ok) resolve();
-                else reject(new Error('Form submission failed'));
+                else reject(new Error('Form submission timed out'));
             }
 
             iframe.onload = function() { finish(true); };
-            var timer = window.setTimeout(function() { finish(true); }, 5000);
+            var timer = window.setTimeout(function() { finish(false); }, 15000);
             form.submit();
         });
     }
@@ -182,29 +183,15 @@
             fields
         );
 
-        // Do not use mode: 'no-cors' — it breaks Apps Script redirects and always looks successful.
+        // Hidden form POST is the most reliable method for Google Apps Script web apps.
         try {
-            const response = await fetch(url, {
-                method: 'POST',
-                body: new URLSearchParams(payload)
-            });
-            const text = await response.text();
-            const data = JSON.parse(text);
-
-            if (data.success) {
-                return { success: true };
-            }
-            return { success: false, error: data.error || 'Submission failed' };
-        } catch (fetchError) {
-            try {
-                await submitViaHiddenForm(url, payload);
-                return { success: true };
-            } catch (formError) {
-                return {
-                    success: false,
-                    error: 'Could not reach the form server. Please try again or email connect@webhouseinc.co.'
-                };
-            }
+            await submitViaHiddenForm(url, payload);
+            return { success: true };
+        } catch (error) {
+            return {
+                success: false,
+                error: 'Could not save your submission. Please try again or email connect@webhouseinc.co.'
+            };
         }
     }
 

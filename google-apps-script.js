@@ -1,20 +1,17 @@
 /**
  * Google Apps Script — WebHouse Inc. Website Forms
  *
- * Collects contact, newsletter, and consultation submissions into one Google Sheet
- * (separate tabs per form type).
- *
  * SETUP:
- * 1. Create a Google Sheet at https://sheets.google.com
- * 2. Copy the Sheet ID from the URL (between /d/ and /edit)
- * 3. Go to https://script.google.com → New project
- * 4. Paste this entire file into the editor
- * 5. Replace YOUR_SHEET_ID_HERE below with your Sheet ID
- * 6. Deploy → New deployment → Web app
+ * 1. Set SHEET_ID below to your Google Sheet ID
+ * 2. Run setupSpreadsheet() once from the script editor
+ * 3. Deploy → Manage deployments → Edit → New version → Deploy
+ *    (You MUST create a new version after every code change!)
  *    - Execute as: Me
  *    - Who has access: Anyone
- * 7. Copy the Web App URL
- * 8. Paste the URL into js/form-config.js (GOOGLE_APPS_SCRIPT_URL)
+ * 4. Paste the Web App URL into js/form-config.js
+ *
+ * TEST: Open your Web App URL in a browser — you should see JSON with your sheetId.
+ * TEST WRITE: Add ?formType=newsletter&email=test@example.com to the URL — check Newsletter tab.
  */
 
 const SHEET_ID = '1Y0c-J8mAp7m7jFUGKolIzLUQjUO0_gOolKqwpsxTQs4';
@@ -38,13 +35,29 @@ const FORM_SHEETS = {
 };
 
 function doPost(e) {
+  return processFormSubmission_(parseRequestData_(e));
+}
+
+function doGet(e) {
+  var params = e && e.parameter ? e.parameter : {};
+  if (params.formType) {
+    return processFormSubmission_(params);
+  }
+  return jsonResponse_({
+    status: 'ok',
+    message: 'WebHouse Inc. forms backend is running',
+    sheetId: SHEET_ID,
+    tabs: ['Contact', 'Newsletter', 'Consultation']
+  });
+}
+
+function processFormSubmission_(data) {
   try {
-    const data = parseRequestData_(e);
-    const formType = String(data.formType || '').toLowerCase();
-    const config = FORM_SHEETS[formType];
+    var formType = String(data.formType || '').toLowerCase();
+    var config = FORM_SHEETS[formType];
 
     if (!config) {
-      return jsonResponse_({ success: false, error: 'Invalid form type' });
+      return jsonResponse_({ success: false, error: 'Invalid form type: ' + formType });
     }
 
     for (var i = 0; i < config.required.length; i++) {
@@ -54,12 +67,12 @@ function doPost(e) {
       }
     }
 
-    const ss = SpreadsheetApp.openById(SHEET_ID);
-    const sheet = getOrCreateSheet_(ss, config);
-    const timestamp = data.timestamp || new Date().toISOString();
-    const sourcePage = data.sourcePage || '';
+    var ss = SpreadsheetApp.openById(SHEET_ID);
+    var sheet = getOrCreateSheet_(ss, config);
+    var timestamp = data.timestamp || new Date().toISOString();
+    var sourcePage = data.sourcePage || '';
+    var row;
 
-    let row;
     if (formType === 'contact') {
       row = [
         timestamp,
@@ -84,24 +97,19 @@ function doPost(e) {
 
     sheet.appendRow(row);
 
-    return jsonResponse_({ success: true, message: 'Submission saved' });
+    return jsonResponse_({
+      success: true,
+      message: 'Submission saved',
+      sheet: config.name,
+      sheetId: SHEET_ID
+    });
   } catch (error) {
     return jsonResponse_({ success: false, error: error.toString() });
   }
 }
 
-function doGet() {
-  return ContentService.createTextOutput(
-    'WebHouse Inc. forms backend is running. Use POST to submit form data.'
-  ).setMimeType(ContentService.MimeType.TEXT);
-}
-
-/**
- * Run once from the Apps Script editor to create all tabs and headers.
- * Extensions → Apps Script → select setupSpreadsheet → Run
- */
 function setupSpreadsheet() {
-  const ss = SpreadsheetApp.openById(SHEET_ID);
+  var ss = SpreadsheetApp.openById(SHEET_ID);
   Object.keys(FORM_SHEETS).forEach(function (key) {
     getOrCreateSheet_(ss, FORM_SHEETS[key]);
   });
@@ -123,19 +131,19 @@ function parseRequestData_(e) {
 }
 
 function parseFormEncoded_(body) {
-  const data = {};
+  var data = {};
   body.split('&').forEach(function (pair) {
-    const parts = pair.split('=');
-    if (parts.length === 2) {
-      data[decodeURIComponent(parts[0].replace(/\+/g, ' '))] =
-        decodeURIComponent(parts[1].replace(/\+/g, ' '));
-    }
+    var eq = pair.indexOf('=');
+    if (eq === -1) return;
+    var key = decodeURIComponent(pair.slice(0, eq).replace(/\+/g, ' '));
+    var value = decodeURIComponent(pair.slice(eq + 1).replace(/\+/g, ' '));
+    data[key] = value;
   });
   return data;
 }
 
 function getOrCreateSheet_(ss, config) {
-  let sheet = ss.getSheetByName(config.name);
+  var sheet = ss.getSheetByName(config.name);
   if (!sheet) {
     sheet = ss.insertSheet(config.name);
   }
