@@ -226,16 +226,16 @@ Book a Free <span class="text-primary">Consultation</span>
 </h2>
 <form id="heroConsultForm" class="space-y-5">
 <div>
-<input class="w-full bg-transparent border-0 border-b border-gray-200 py-3 px-0 text-[#1c1917] placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-0 transition-colors" type="text" placeholder="Full Name" required/>
+<input class="w-full bg-transparent border-0 border-b border-gray-200 py-3 px-0 text-[#1c1917] placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-0 transition-colors" type="text" placeholder="Full Name" name="name" required/>
 </div>
 <div>
-<input class="w-full bg-transparent border-0 border-b border-gray-200 py-3 px-0 text-[#1c1917] placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-0 transition-colors" type="email" placeholder="Email" required/>
+<input class="w-full bg-transparent border-0 border-b border-gray-200 py-3 px-0 text-[#1c1917] placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-0 transition-colors" type="email" placeholder="Email" name="email" required/>
 </div>
 <div>
-<input class="w-full bg-transparent border-0 border-b border-gray-200 py-3 px-0 text-[#1c1917] placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-0 transition-colors" type="tel" placeholder="Number"/>
+<input class="w-full bg-transparent border-0 border-b border-gray-200 py-3 px-0 text-[#1c1917] placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-0 transition-colors" type="tel" placeholder="Number" name="phone"/>
 </div>
 <div>
-<textarea class="w-full bg-transparent border-0 border-b border-gray-200 py-3 px-0 text-[#1c1917] placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-0 transition-colors resize-y min-h-[80px]" placeholder="Describe Your Project Need."></textarea>
+<textarea class="w-full bg-transparent border-0 border-b border-gray-200 py-3 px-0 text-[#1c1917] placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-0 transition-colors resize-y min-h-[80px]" placeholder="Describe Your Project Need." name="message"></textarea>
 </div>
 <p class="text-xs text-gray-500">
 By submitting this form, you agree to our <a href="mailto:connect@webhouseinc.co?subject=Privacy%20Policy%20Inquiry" class="text-primary hover:underline">Privacy Policy</a>
@@ -634,6 +634,7 @@ Get insights on technology, digital transformation, and growth strategies.
 </footer>
 
 </div>
+<script src="js/form-config.js"></script>
 <script src="js/main.js"></script>
 <script src="js/mega-menu.js"></script>
 </body>

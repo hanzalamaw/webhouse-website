@@ -80,23 +80,122 @@
         });
     }
 
+    // Google Sheets form submission (via Apps Script)
+    function getFormConfig() {
+        return window.WEBHOUSE_FORM_CONFIG || {};
+    }
+
+    function isFormBackendConfigured() {
+        const url = getFormConfig().GOOGLE_APPS_SCRIPT_URL;
+        return Boolean(url && url !== 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE');
+    }
+
+    function showFormStatus(form, message, isError) {
+        let status = form.querySelector('[data-form-status]');
+        if (!status) {
+            status = document.createElement('p');
+            status.setAttribute('data-form-status', '');
+            status.className = 'text-sm mt-3';
+            form.appendChild(status);
+        }
+        status.textContent = message;
+        status.className = 'text-sm mt-3 ' + (isError ? 'text-red-600' : 'text-green-600');
+    }
+
+    function setFormSubmitting(form, submitting) {
+        const btn = form.querySelector('button[type="submit"]');
+        if (!btn) return;
+
+        if (submitting) {
+            if (!btn.dataset.originalHtml) {
+                btn.dataset.originalHtml = btn.innerHTML;
+            }
+            btn.disabled = true;
+            btn.innerHTML = 'Sending...';
+            return;
+        }
+
+        btn.disabled = false;
+        if (btn.dataset.originalHtml) {
+            btn.innerHTML = btn.dataset.originalHtml;
+        }
+    }
+
+    async function submitToGoogleSheet(formType, fields) {
+        const url = getFormConfig().GOOGLE_APPS_SCRIPT_URL;
+        if (!isFormBackendConfigured()) {
+            return { success: false, error: 'Form backend is not configured yet.' };
+        }
+
+        const payload = Object.assign(
+            {
+                formType: formType,
+                timestamp: new Date().toISOString(),
+                sourcePage: window.location.pathname || window.location.href
+            },
+            fields
+        );
+
+        const body = new URLSearchParams(payload).toString();
+
+        try {
+            await fetch(url, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: body
+            });
+            return { success: true };
+        } catch (error) {
+            return { success: false, error: error.message || 'Network error' };
+        }
+    }
+
+    async function handleFormSubmit(form, formType, fields, successMessage) {
+        setFormSubmitting(form, true);
+        showFormStatus(form, '', false);
+
+        const result = await submitToGoogleSheet(formType, fields);
+        setFormSubmitting(form, false);
+
+        if (result.success) {
+            form.reset();
+            showFormStatus(form, successMessage, false);
+        } else {
+            showFormStatus(
+                form,
+                result.error || 'Something went wrong. Please try again or email connect@webhouseinc.co.',
+                true
+            );
+        }
+    }
+
     // Newsletter Forms
     function initNewsletterForms() {
         document.querySelectorAll('[data-newsletter-form]').forEach(form => {
-            form.addEventListener('submit', (e) => {
+            form.addEventListener('submit', async (e) => {
                 e.preventDefault();
                 const emailInput = form.querySelector('input[type="email"]');
                 const email = emailInput?.value.trim();
 
-                if (email && isValidEmail(email)) {
-                    const subject = encodeURIComponent('Newsletter Subscription');
-                    const body = encodeURIComponent('Please subscribe this email to the WebHouse Inc. newsletter:\n\n' + email);
-                    window.location.href = 'mailto:connect@webhouseinc.co?subject=' + subject + '&body=' + body;
-                    emailInput.value = '';
-                } else if (emailInput) {
-                    emailInput.setCustomValidity('Please enter a valid email address');
-                    emailInput.reportValidity();
+                if (!email || !isValidEmail(email)) {
+                    if (emailInput) {
+                        emailInput.setCustomValidity('Please enter a valid email address');
+                        emailInput.reportValidity();
+                    }
+                    return;
                 }
+
+                if (emailInput) {
+                    emailInput.setCustomValidity('');
+                }
+
+                await handleFormSubmit(
+                    form,
+                    'newsletter',
+                    { email: email },
+                    'Thanks for subscribing! We\'ll be in touch.'
+                );
             });
         });
     }
@@ -106,29 +205,58 @@
         const form = document.getElementById('contactForm');
         if (!form) return;
 
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const name = document.getElementById('contactName')?.value.trim() || '';
-            const from = document.getElementById('contactEmail')?.value.trim() || '';
-            const subject = document.getElementById('contactSubject')?.value.trim() || 'Contact from WebHouse Inc. website';
+            const email = document.getElementById('contactEmail')?.value.trim() || '';
+            const subject =
+                document.getElementById('contactSubject')?.value.trim() ||
+                'Contact from WebHouse Inc. website';
             const message = document.getElementById('contactMessage')?.value.trim() || '';
-            const body = 'Name: ' + name + '\nReply-to: ' + from + '\n\n' + message;
-            window.location.href = 'mailto:connect@webhouseinc.co?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+            if (!email || !isValidEmail(email)) {
+                const emailInput = document.getElementById('contactEmail');
+                if (emailInput) {
+                    emailInput.setCustomValidity('Please enter a valid email address');
+                    emailInput.reportValidity();
+                }
+                return;
+            }
+
+            await handleFormSubmit(
+                form,
+                'contact',
+                { name: name, email: email, subject: subject, message: message },
+                'Message sent! We\'ll get back to you soon.'
+            );
         });
     }
 
     // Consultation sidebar forms
     function initConsultForms() {
         document.querySelectorAll('#heroConsultForm').forEach(form => {
-            form.addEventListener('submit', (e) => {
+            form.addEventListener('submit', async (e) => {
                 e.preventDefault();
                 const name = form.querySelector('[name="name"]')?.value.trim() || '';
                 const email = form.querySelector('[name="email"]')?.value.trim() || '';
                 const phone = form.querySelector('[name="phone"]')?.value.trim() || '';
                 const message = form.querySelector('[name="message"]')?.value.trim() || '';
-                const subject = 'Consultation Request from WebHouse Inc. website';
-                const body = 'Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\n\n' + message;
-                window.location.href = 'mailto:connect@webhouseinc.co?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+                if (!email || !isValidEmail(email)) {
+                    const emailInput = form.querySelector('[name="email"]');
+                    if (emailInput) {
+                        emailInput.setCustomValidity('Please enter a valid email address');
+                        emailInput.reportValidity();
+                    }
+                    return;
+                }
+
+                await handleFormSubmit(
+                    form,
+                    'consultation',
+                    { name: name, email: email, phone: phone, message: message },
+                    'Request received! We\'ll contact you shortly.'
+                );
             });
         });
     }
