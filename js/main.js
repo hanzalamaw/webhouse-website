@@ -121,6 +121,52 @@
         }
     }
 
+    function submitViaHiddenForm(url, payload) {
+        return new Promise(function(resolve, reject) {
+            var iframeName = 'webhouseFormTarget';
+            var iframe = document.getElementById(iframeName);
+            if (!iframe) {
+                iframe = document.createElement('iframe');
+                iframe.name = iframeName;
+                iframe.id = iframeName;
+                iframe.title = 'Form submission';
+                iframe.style.cssText = 'display:none;width:0;height:0;border:0';
+                document.body.appendChild(iframe);
+            }
+
+            var form = document.createElement('form');
+            form.method = 'POST';
+            form.action = url;
+            form.target = iframeName;
+            form.acceptCharset = 'UTF-8';
+            form.style.display = 'none';
+
+            Object.keys(payload).forEach(function(key) {
+                var input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = payload[key] == null ? '' : String(payload[key]);
+                form.appendChild(input);
+            });
+
+            document.body.appendChild(form);
+
+            var settled = false;
+            function finish(ok) {
+                if (settled) return;
+                settled = true;
+                window.clearTimeout(timer);
+                form.remove();
+                if (ok) resolve();
+                else reject(new Error('Form submission failed'));
+            }
+
+            iframe.onload = function() { finish(true); };
+            var timer = window.setTimeout(function() { finish(true); }, 5000);
+            form.submit();
+        });
+    }
+
     async function submitToGoogleSheet(formType, fields) {
         const url = getFormConfig().GOOGLE_APPS_SCRIPT_URL;
         if (!isFormBackendConfigured()) {
@@ -136,18 +182,29 @@
             fields
         );
 
-        const body = new URLSearchParams(payload).toString();
-
+        // Do not use mode: 'no-cors' — it breaks Apps Script redirects and always looks successful.
         try {
-            await fetch(url, {
+            const response = await fetch(url, {
                 method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: body
+                body: new URLSearchParams(payload)
             });
-            return { success: true };
-        } catch (error) {
-            return { success: false, error: error.message || 'Network error' };
+            const text = await response.text();
+            const data = JSON.parse(text);
+
+            if (data.success) {
+                return { success: true };
+            }
+            return { success: false, error: data.error || 'Submission failed' };
+        } catch (fetchError) {
+            try {
+                await submitViaHiddenForm(url, payload);
+                return { success: true };
+            } catch (formError) {
+                return {
+                    success: false,
+                    error: 'Could not reach the form server. Please try again or email connect@webhouseinc.co.'
+                };
+            }
         }
     }
 

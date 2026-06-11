@@ -17,7 +17,7 @@
  * 8. Paste the URL into js/form-config.js (GOOGLE_APPS_SCRIPT_URL)
  */
 
-const SHEET_ID = 'YOUR_SHEET_ID_HERE';
+const SHEET_ID = '1Y0c-J8mAp7m7jFUGKolIzLUQjUO0_gOolKqwpsxTQs4';
 
 const FORM_SHEETS = {
   contact: {
@@ -108,14 +108,18 @@ function setupSpreadsheet() {
 }
 
 function parseRequestData_(e) {
-  if (e && e.postData && e.postData.contents) {
-    const contentType = String(e.postData.type || '').toLowerCase();
-    if (contentType.indexOf('application/json') !== -1) {
-      return JSON.parse(e.postData.contents);
-    }
-    return parseFormEncoded_(e.postData.contents);
+  var data = {};
+  if (e && e.parameter) {
+    data = Object.assign({}, e.parameter);
   }
-  return e && e.parameter ? e.parameter : {};
+  if (e && e.postData && e.postData.contents) {
+    var contentType = String(e.postData.type || '').toLowerCase();
+    var parsed = contentType.indexOf('application/json') !== -1
+      ? JSON.parse(e.postData.contents)
+      : parseFormEncoded_(e.postData.contents);
+    data = Object.assign(data, parsed);
+  }
+  return data;
 }
 
 function parseFormEncoded_(body) {
