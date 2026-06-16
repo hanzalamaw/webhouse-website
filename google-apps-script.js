@@ -1,5 +1,5 @@
 /**
- * Google Apps Script — WebHouse Inc. Website Forms
+ * Google Apps Script, WebHouse Inc. Website Forms
  *
  * SETUP:
  * 1. Set SHEET_ID below to your Google Sheet ID
@@ -10,8 +10,8 @@
  *    - Who has access: Anyone
  * 4. Paste the Web App URL into js/form-config.js
  *
- * TEST: Open your Web App URL in a browser — you should see JSON with your sheetId.
- * TEST WRITE: Add ?formType=newsletter&email=test@example.com to the URL — check Newsletter tab.
+ * TEST: Open your Web App URL in a browser, you should see JSON with your sheetId.
+ * TEST WRITE: Add ?formType=newsletter&email=test@example.com to the URL, check Newsletter tab.
  */
 
 const SHEET_ID = '1Y0c-J8mAp7m7jFUGKolIzLUQjUO0_gOolKqwpsxTQs4';
