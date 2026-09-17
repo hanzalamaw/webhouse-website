@@ -482,6 +482,12 @@
         });
     }
 
+        button.addEventListener('click', () => {
+            hiddenCards.forEach((card) => card.classList.remove('hidden'));
+            button.classList.add('hidden');
+        });
+    }
+
     // Initialize all features when DOM is ready
     function init() {
         if (document.readyState === 'loading') {
